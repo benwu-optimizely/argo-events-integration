@@ -1,8 +1,8 @@
 # Publishing images requires an access token. For hub.docker.com you can create one at https://hub.docker.com/settings/security
 # This needs to be mounted as `$DOCKER_CONFIG/config.json`. To do this, you'll need to create a secret as follows:
 #
-#    export DOCKER_USERNAME=benwuoptimizely
-#    export DOCKER_TOKEN=dckr_pat_Wf5EywkSmmuaAemXgp-EE76PN0A
+#    export DOCKER_USERNAME=yourusername
+#    export DOCKER_TOKEN=yourpassword
 #    kubectl create secret generic docker-config --from-literal="config.json={\"auths\": {\"https://index.docker.io/v1/\": {\"auth\": \"$(echo -n $DOCKER_USERNAME:$DOCKER_TOKEN|base64)\"}}}" -n argo-events
 #
 apiVersion: argoproj.io/v1alpha1
