@@ -19,7 +19,7 @@ spec:
       - name: path
         value: test-project
       - name: image
-        value: benwuoptimizely/test:latest
+        value: benwuoptimizely/test:demo
   entrypoint: main
   # We use a volume claim template so that we can have a shared workspace.
   volumeClaimTemplates:

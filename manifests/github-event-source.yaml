@@ -3,6 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: EventSource
 metadata:
   name: github
+  namespace: argo-events
 spec:
   eventBusName: test-eventbus
   template:
@@ -50,10 +51,10 @@ spec:
       #      # webhookSecret refers to K8s secret that stores the github hook secret
       #      # +optional
       # webhookSecret:
-      # Name of the K8s secret that contains the hook secret
-      # name: github-access
-      # Key within the K8s secret whose corresponding value (must be base64 encoded) is hook secret
-      # key: secret
+      #   # Name of the K8s secret that contains the hook secret
+      #   name: github-access
+      #   # Key within the K8s secret whose corresponding value (must be base64 encoded) is hook secret
+      #   key: secret
 
       # type of the connection between event-source and Github.
       # You should set it to false to avoid man-in-the-middle and other attacks.

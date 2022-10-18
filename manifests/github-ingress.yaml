@@ -2,19 +2,19 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    kubernetes.io/ingress.class: nginx
     ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
   name: github-event-ingress
   namespace: argo-events
 spec:
   rules:
-    - host: github-webhook.engineering-az1.cloud.insitehq.net
+    - host: engineering-az1.github-webhook.cloud.insitehq.net
       http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
+          - backend:
               service:
                 name: github-eventsource-svc
                 port:
-                  number: 1200
+                  number: 12000
+            path: /
+            pathType: Prefix
